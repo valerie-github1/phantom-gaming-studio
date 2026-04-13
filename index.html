@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phantom Gaming Studio — Phoenix AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#060C18;--bg1:#0A1626;--bg2:#0F1E33;
+      --acc:#06b6d4;--acc2:#3b82f6;--alert:#f43f5e;
+      --t1:#E0E9F2;--t2:#6A8299;--t3:#344F65;
+      --line:rgba(255,255,255,0.07);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--t1);font-family:'DM Sans',sans-serif;min-height:100vh}
+    .conf{background:rgba(244,63,94,0.08);border-bottom:1px solid rgba(244,63,94,0.2);padding:8px;text-align:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--alert)}
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 24px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(6,182,212,0.12) 0%,transparent 70%);pointer-events:none}
+    .badge{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);border:1px solid rgba(6,182,212,0.3);padding:5px 14px;border-radius:20px;margin-bottom:28px;display:inline-block}
+    h1{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,10vw,96px);font-weight:500;letter-spacing:-.02em;line-height:1;margin-bottom:12px;background:linear-gradient(135deg,#E0E9F2 30%,#06b6d4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .sub{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--t3);margin-bottom:32px}
+    .tagline{font-size:clamp(16px,2.5vw,22px);color:var(--t2);max-width:560px;line-height:1.65;margin-bottom:48px}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+    .btn{padding:13px 28px;border-radius:4px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;letter-spacing:.05em;cursor:pointer;text-decoration:none;transition:all .2s}
+    .btn-primary{background:var(--acc);color:#060C18;border:none}
+    .btn-primary:hover{opacity:.85}
+    .btn-outline{background:none;color:var(--t2);border:1px solid var(--line)}
+    .btn-outline:hover{border-color:rgba(6,182,212,0.4);color:var(--t1)}
+    .divider{height:1px;background:var(--line);max-width:900px;margin:0 auto}
+    section{max-width:900px;margin:0 auto;padding:72px 24px}
+    .sec-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--t3);margin-bottom:32px}
+    h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,42px);font-weight:500;margin-bottom:16px}
+    p{color:var(--t2);line-height:1.75;font-size:15px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px}
+    .card{background:var(--bg1);border:1px solid var(--line);border-radius:8px;padding:24px;transition:border-color .2s}
+    .card:hover{border-color:rgba(6,182,212,0.25)}
+    .card-badge{font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 10px;border-radius:12px;display:inline-block;margin-bottom:14px}
+    .proto{background:rgba(6,182,212,0.1);color:var(--acc)}
+    .concept{background:rgba(59,130,246,0.1);color:var(--acc2)}
+    .rd{background:rgba(244,63,94,0.1);color:var(--alert)}
+    .card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;margin-bottom:8px}
+    .card p{font-size:13px}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin-top:32px}
+    .stat{background:var(--bg1);padding:24px}
+    .stat-n{font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--acc);margin-bottom:4px}
+    .stat-l{font-size:11px;color:var(--t3);letter-spacing:.08em;text-transform:uppercase}
+    .team{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:32px}
+    .member{background:var(--bg1);border:1px solid var(--line);border-radius:8px;padding:24px}
+    .member-name{font-size:16px;font-weight:500;margin-bottom:4px}
+    .member-role{font-size:11px;color:var(--acc);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
+    .member-bio{font-size:12px;color:var(--t3);line-height:1.6}
+    footer{border-top:1px solid var(--line);padding:32px 24px;text-align:center;font-size:11px;color:var(--t3);letter-spacing:.05em}
+    footer a{color:var(--t3);text-decoration:none}
+    footer a:hover{color:var(--acc)}
+  </style>
+</head>
+<body>
+
+<div class="conf">Confidential &mdash; For meeting attendees only &mdash; Do not distribute</div>
+
+<div class="hero">
+  <span class="badge">Phoenix AI Subsidiary &middot; London 2026</span>
+  <h1>Phantom Gaming</h1>
+  <div class="sub">Studio</div>
+  <p class="tagline">AI-native game development. Holographic experiences. The future of interactive entertainment &mdash; built in London.</p>
+  <div class="cta-row">
+    <a href="#pipeline" class="btn btn-primary">View pipeline &darr;</a>
+    <a href="#invest" class="btn btn-outline">Investment ask</a>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section>
+  <div class="sec-label">The opportunity</div>
+  <h2>Games that think.</h2>
+  <p>The global gaming market is worth £180B. AI integration remains shallow — no studio has built a game from the ground up where the AI <em>is</em> the engine. Phantom Gaming Studio changes that.</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-n">£180B</div><div class="stat-l">Global gaming market</div></div>
+    <div class="stat"><div class="stat-n">£16.4B</div><div class="stat-l">Total addressable market</div></div>
+    <div class="stat"><div class="stat-n">£150k</div><div class="stat-l">Pre-seed ask</div></div>
+    <div class="stat"><div class="stat-n">£200k</div><div class="stat-l">Year 1 revenue target</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="pipeline">
+  <div class="sec-label">Product pipeline</div>
+  <h2>Three titles. One platform.</h2>
+  <div class="cards">
+    <div class="card">
+      <span class="card-badge proto">Prototype complete</span>
+      <h3>Phantom Drive</h3>
+      <p>Holographic EV cockpit simulator. Real-time 3D telemetry, AI-driven physics, three drive modes. B2C game &amp; B2B licensing.</p>
+    </div>
+    <div class="card">
+      <span class="card-badge concept">Concept</span>
+      <h3>Aria&rsquo;s World</h3>
+      <p>AI companion narrative RPG. Every NPC powered by a live LLM. No two playthroughs the same.</p>
+    </div>
+    <div class="card">
+      <span class="card-badge rd">R&amp;D</span>
+      <h3>GridMind</h3>
+      <p>Real-time strategy with an LLM adversary that learns your tactics.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="invest">
+  <div class="sec-label">Investment</div>
+  <h2>Pre-seed &middot; £150,000</h2>
+  <p>Funding takes Phantom Drive from prototype to Steam Early Access in 6 months, and secures the first B2B EV cockpit licensing deal.</p>
+  <div class="stats">
+    <div class="stat"><div class="stat-n">£72k</div><div class="stat-l">Engineering (6 months)</div></div>
+    <div class="stat"><div class="stat-n">£35k</div><div class="stat-l">Marketing &amp; launch</div></div>
+    <div class="stat"><div class="stat-n">£20k</div><div class="stat-l">Infrastructure</div></div>
+    <div class="stat"><div class="stat-n">£23k</div><div class="stat-l">Legal &amp; contingency</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section>
+  <div class="sec-label">Team</div>
+  <h2>Built by founders.</h2>
+  <div class="team">
+    <div class="member">
+      <div class="member-name">Valerie Wilcox</div>
+      <div class="member-role">CEO &middot; Creative Director</div>
+      <div class="member-bio">Founder of Phoenix AI, Phantom Gaming Studio &amp; Cupcakes &amp; Cocktails. Agency founder, client strategy, brand &amp; vision.</div>
+    </div>
+    <div class="member">
+      <div class="member-name">Dilpreet</div>
+      <div class="member-role">CTO &middot; Lead Engineer</div>
+      <div class="member-bio">Full-stack engineer. Three.js, AI integrations, real-time systems. Builder of the Phantom Drive prototype.</div>
+    </div>
+    <div class="member">
+      <div class="member-name">Aria</div>
+      <div class="member-role">AI Lead &middot; Client Relations</div>
+      <div class="member-bio">PhoennixAI&rsquo;s AI intake specialist &mdash; briefs, NDA onboarding &amp; project scoping.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Phantom Gaming Studio Ltd &middot; A Phoenix AI Subsidiary &middot;
+  <a href="mailto:studio@phoennixai.com">studio@phoennixai.com</a> &middot;
+  <a href="https://phoennixai.com">phoennixai.com</a> &middot; London, UK
+  <br><br>
+  <span style="color:rgba(244,63,94,0.5)">Confidential — Not for distribution</span>
+</footer>
+
+</body>
+</html>
