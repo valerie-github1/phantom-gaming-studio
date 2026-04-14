@@ -285,11 +285,11 @@ composio proxy https://gmail.googleapis.com/... --toolkit gmail
 ## 5. COMPOSIO API KEYS & CREDENTIALS
 
 ```
-COMPOSIO_API_KEY=ak_aAuly4VUFvJEbk6i35SI
-EXTERNAL_USER_ID=pg-test-p91HCRnNbLH4kvoHEWW1t6irI2MWuzCN
+COMPOSIO_API_KEY=<stored in .env — never commit>
+EXTERNAL_USER_ID=<stored in .env — never commit>
 ```
 
-> ⚠️  NEVER commit real API keys to public repos. Move these to `.env` and add `.env` to `.gitignore`.
+> ⚠️  NEVER commit real API keys to public repos. Store in `.env` (gitignored). Ask Valerie for the actual keys.
 
 ---
 
